@@ -6,24 +6,24 @@ use app\models\Articles;
 use Yii;
 use yii\web\Controller;
 use app\models\Categories;
+use app\models\Menu;
 
 class TestController extends Controller
 {
-    public function actionCategory()
+    public function actionIndex()
     {
-        $test = new Categories();
-        $categories = $test->getCategories();
-        return $this->render('category', [
-            'categories' => $categories,
+        return $this->render('index', [
+            'categories' => Categories::find()->all(),
+            'articles' => Articles::getArticles(),
+            'menu' => Menu::find()->all()
         ]);
     }
 
-    public  function actionArticles()
+    public function actionGetArticle($id)
     {
-        $arc = new Articles();
-        $articles = $arc->getArticles();
-        return $this->render('articles', [
-            'articles' => $articles,
+        return $this->render('acticle', [
+            'article' => Articles::find()->where(['id' => $id])->one()
         ]);
     }
+
 }

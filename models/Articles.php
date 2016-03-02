@@ -12,8 +12,9 @@ class Articles extends ActiveRecord
         return '{{%articles_table}}';
     }
 
-    public function getArticles()
+    public static function getArticles()
     {
+        // SELECT id, name FROM articles WHERE id = 4
         return (new Query())
             ->from(Articles::tableName())
             ->all();
