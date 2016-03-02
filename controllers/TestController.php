@@ -9,7 +9,7 @@ use app\models\Categories;
 
 class TestController extends Controller
 {
-    public function actionIndex()
+    public function actionCategory()
     {
         $test = new Categories();
         $categories = $test->getCategories();
