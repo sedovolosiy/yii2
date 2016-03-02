@@ -20,8 +20,8 @@ AppAsset::register($this);
 </head>
 <body>
 <?php $this->beginBody() ?>
-<?php $this->render('header'); ?>
-<?php $this->render('menu', ['menus' => $menu]); ?>
+
+<?= $this->render('menu', ['menus' =>$this->context->getAll()]); ?>
 <div class="wrap">
 
     <div class="container">

@@ -15,7 +15,7 @@ class TestController extends Controller
         return $this->render('index', [
             'categories' => Categories::find()->all(),
             'articles' => Articles::getArticles(),
-            'menu' => Menu::find()->all()
+            'menus' => Menu::find()->all()
         ]);
     }
 
@@ -24,6 +24,11 @@ class TestController extends Controller
         return $this->render('acticle', [
             'article' => Articles::find()->where(['id' => $id])->one()
         ]);
+    }
+
+    public function getAll()
+    {
+        return Menu::find()->all();
     }
 
 }
