@@ -20,23 +20,18 @@ AppAsset::register($this);
 </head>
 <body>
 <?php $this->beginBody() ?>
+<div class="header"><?php echo $this->render('header'); ?></div>
+<div><?= $this->render('menu', ['menus' =>$this->context->getAllMenu()]); ?></div>
 
-<?= $this->render('menu', ['menus' =>$this->context->getAll()]); ?>
-<div class="wrap">
-
+    <div><?= $this->render('left_bar', ['categories' =>$this->context->getAllCategories()]); ?></div>
     <div class="container">
+
         <?= $content ?>
     </div>
+
+<div id='bottom'>
+
 </div>
-
-<footer class="footer">
-    <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
-
-        <p class="pull-right"><?= Yii::powered() ?></p>
-    </div>
-</footer>
-
 <?php $this->endBody() ?>
 </body>
 </html>
