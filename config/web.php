@@ -7,7 +7,7 @@ $config = [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'language' => 'ru-RU',
-    'defaultRoute' => 'test',
+
 
     'components' => [
         'request' => [
@@ -47,6 +47,9 @@ $config = [
             'showScriptName' => false,
 
             'rules' => [
+                ''=>'test/index',
+                'article/<id:\d+>' => 'test/get-article',
+
             ],
         ],
         

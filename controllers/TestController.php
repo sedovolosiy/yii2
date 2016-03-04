@@ -37,7 +37,10 @@ class TestController extends Controller
     public function actionGetArticle($id)
     {
         return $this->render('article', [
-            'article' => Articles::find()->where(['id' => $id])->one()
+//            'id'=>$id
+            'article' => Articles::find()
+                ->where(['id' => $id])
+                ->one()
         ]);
     }
 
